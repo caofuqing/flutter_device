@@ -30,8 +30,18 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await FlutterDevice.platformVersion ?? 'Unknown platform version' + await FlutterDevice.platformSystemMark + await FlutterDevice.platformUid;
+      // var a = await FlutterDevice.platformVersion ?? "";
+      var b = await FlutterDevice.platformSystemMark;
+      // var c = await FlutterDevice.platformUid;
+      // print("a" + a.toString());
+      print("b-------------------------->>>>>>>>" + b.toString());
+      var cc = await FlutterDevice.platformDeviceModle;
+      print("cc-------------------------->>>>>>>>" + cc.toString());
+
+      // print("c" + c.toString());
+      platformVersion = '1111.';
+      // platformVersion =
+      //     await  ?? 'Unknown platform version' + await FlutterDevice.platformSystemMark + await FlutterDevice.platformUid;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

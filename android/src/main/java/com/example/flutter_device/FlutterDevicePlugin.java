@@ -1,4 +1,8 @@
 package com.example.flutter_device;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.provider.Settings;
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
@@ -9,6 +13,10 @@ import java.util.UUID;
 
 /** FlutterDevicePlugin */
 public class FlutterDevicePlugin implements FlutterPlugin, MethodCallHandler {
+  private Context context;
+//  FlutterDevicePlugin(Context context){
+//    this.context = context;
+//  }
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -102,7 +110,7 @@ public class FlutterDevicePlugin implements FlutterPlugin, MethodCallHandler {
   // 系统使用的SDK版本
   private String getsystemMark()
   {
-    return Build.VERSION.SDK;
+    return Build.VERSION.SECURITY_PATCH;
   }
 
   // 手机的型号
